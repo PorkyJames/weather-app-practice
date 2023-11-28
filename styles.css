@@ -117,6 +117,10 @@ body{
     height: 100px;
 }
 
+.humidity, .wind{
+    margin-top: -30px;
+}
+
 .weather-details .humidity{
     padding-left: 20px;
     justify-content: flex-start;
@@ -171,6 +175,26 @@ body{
     opacity: 0;
 }
 
+.temp-change-container {
+    text-align: center;
+}
+
+.temp-button{
+    background-color: lightgray;
+    color: black;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px; 
+    font-size: 12px; 
+    transition: background-color 0.5s ease;
+    cursor: pointer; 
+    animation-delay: .5s;
+}
+
+.temp-button:hover {
+    background-color: darkgray;
+}
+
 .fadeIn{
     animation: 0.5s fadeIn forwards;
     animation-delay: 0.5s;
@@ -182,3 +206,4 @@ body{
         opacity: 1;
     }
 }
+
