@@ -8,8 +8,8 @@ Mainly used to help give myself a basic understanding of utilizing HTML, CSS, an
 
 
 ## Features
-* Includes a weather API that fetches based on an eventListener.
-* Link to API website: https://openweathermap.org/api
+* Users can type in a City that will fetch data via an EventListener to get weather data from the api
+* Link to API: https://openweathermap.org/api
 
 
 ## TODO
