@@ -4,9 +4,7 @@
 This side project contains small amounts of HTML, CSS, and vanilla JS.
 Mainly used to help give myself a basic understanding of utilizing HTML, CSS, and JS.
 
-![image](https://github.com/PorkyJames/weather-app-practice/assets/120065147/0c197534-8765-47d5-b551-951cbc422c1a)
-
-![image](https://github.com/PorkyJames/weather-app-practice/assets/120065147/5d748420-46eb-4725-b2fb-72a98ffac53d)
+![image](https://github.com/PorkyJames/weather-app-practice/assets/120065147/0c197534-8765-47d5-b551-951cbc422c1a) ![image](https://github.com/PorkyJames/weather-app-practice/assets/120065147/5d748420-46eb-4725-b2fb-72a98ffac53d)
 
 
 ## Features
