@@ -8,8 +8,24 @@ const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 
-//! Create a isFahrenheit variable that allows us to toggle true or false based on °C or °F
-let isFahrenheit = true
+//! Create temp in F and Temp in C to toggle back and forth
+let tempInF
+let tempInC
+
+//! Create a function that will allow us to update the display of the weather
+const updateWeatherDisplay = (json) => {
+    const image = document.querySelector('.weather-box img');
+    const temperature = document.querySelector('.weather-box .temperature');
+    const description = document.querySelector('.weather-box .description');
+    const humidity = document.querySelector('.weather-details .humidity span');
+    const wind = document.querySelector('.weather-details .wind span');
+
+    //! Save the temp in both F and C
+    tempInF = parseInt(json.main.temp)
+    tempInC = parseInt((tempInF - 32) * (5 / 9))
+
+    temperature.innerHTML = `${isFahrenheit ? temperatureInFahrenheit : temperatureInCelsius}<span>°${isFahrenheit ? 'F' : 'C'}</span>`;
+}
 
 //! Event listener for when we click on the search. Really only need one since we're working with only using one button to look for our weather. 
 search.addEventListener('click', () => {
@@ -86,4 +102,5 @@ search.addEventListener('click', () => {
             weatherDetails.classList.add('fadeIn');
             container.style.height = '590px';
         });
+
 });
