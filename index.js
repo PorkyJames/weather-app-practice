@@ -8,6 +8,8 @@ const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 
+//! Create a isFahrenheit variable that allows us to toggle true or false based on °C or °F
+let isFahrenheit = true
 
 //! Event listener for when we click on the search. Really only need one since we're working with only using one button to look for our weather. 
 search.addEventListener('click', () => {
@@ -83,7 +85,8 @@ search.addEventListener('click', () => {
             weatherBox.classList.add('fadeIn');
             weatherDetails.classList.add('fadeIn');
             container.style.height = '590px';
-
         });
+
+
 
 });
