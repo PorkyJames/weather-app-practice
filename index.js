@@ -23,10 +23,11 @@ const updateWeatherDisplay = (json) => {
     const description = document.querySelector('.weather-box .description');
     const humidity = document.querySelector('.weather-details .humidity span');
     const wind = document.querySelector('.weather-details .wind span');
+    const windSpeed = isFahrenheit ? parseInt(json.wind.speed) : parseInt(json.wind.speed * 3.6);
 
     //! Save the temp in both F and C
     tempInF = parseInt(json.main.temp)
-    tempInC = parseInt((tempInF - 32) * (5 / 9))
+    tempInC = parseInt(((tempInF - 32) * (5/9)) * -1)
 
     temperature.innerHTML = `${isFahrenheit ? tempInF : tempInC}<span>°${isFahrenheit ? 'F' : 'C'}</span>`;
     
@@ -57,7 +58,7 @@ const updateWeatherDisplay = (json) => {
 
     description.innerHTML = `${json.weather[0].description}`;
     humidity.innerHTML = `${json.main.humidity}%`;
-    wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
+    wind.innerHTML = `${windSpeed} ${isFahrenheit ? 'mp/h' : 'km/h'}`;
 
     weatherBox.style.display = '';
     weatherDetails.style.display = '';
@@ -68,7 +69,7 @@ const updateWeatherDisplay = (json) => {
 
 // Function to fetch weather data
 function fetchWeather(city) {
-    const units = isFahrenheit ? 'imperial' : 'metric';
+    const units = isFahrenheit ? 'imperial' : 'metric'; // Determine units based on isFahrenheit
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
@@ -89,81 +90,3 @@ toggleSwitch.addEventListener('change', () => {
     if (city) fetchWeather(city);
 });
 
-
-// //! Event listener for when we click on the search. Really only need one since we're working with only using one button to look for our weather. 
-// search.addEventListener('click', () => {
-
-//     //! Establish that our city is whatever the value is in our search box input's value. 
-//     const city = document.querySelector('.search-box input').value;
-
-//     //! If there isn't anything in our input, then we'll just return. So this deals with the edge case of there being nothing. 
-//     if (city === '')
-//         return;
-
-//     //! If we do include anything, then we're going to first fetch our api website. 
-//     //! After we do that, we're going to use .then() and get the response of that and then .json() it so we can parse it. 
-//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${APIKey}`)
-//         .then(response => response.json())
-//         .then(json => {
-            
-//             //! json.cod is very specific to the weather app. From what I've read online, cod is based on 
-//             //! the HTTP status code of the API response. It's not related to the weather data itself, but provides info
-//             //! about the success or failure of the API Call. 
-//             if (json.cod === '404') {
-//                 container.style.height = '400px';
-//                 weatherBox.style.display = 'none';
-//                 weatherDetails.style.display = 'none';
-//                 error404.style.display = 'block';
-//                 error404.classList.add('fadeIn');
-//                 return;
-//             }
-
-//             error404.style.display = 'none';
-//             error404.classList.remove('fadeIn');
-
-//             const image = document.querySelector('.weather-box img');
-//             const temperature = document.querySelector('.weather-box .temperature');
-//             const description = document.querySelector('.weather-box .description');
-//             const humidity = document.querySelector('.weather-details .humidity span');
-//             const wind = document.querySelector('.weather-details .wind span');
-
-
-//         //! Switch cases are for establishing if each case is met. For example, if the weather is sunny, we'll set our image as the sunny icon.
-//             switch (json.weather[0].main) {
-//                 case 'Clear':
-//                     image.src = 'images/clear.png';
-//                     break;
-
-//                 case 'Rain':
-//                     image.src = 'images/rain.png';
-//                     break;
-
-//                 case 'Snow':
-//                     image.src = 'images/snow.png';
-//                     break;
-
-//                 case 'Clouds':
-//                     image.src = 'images/cloud.png';
-//                     break;
-
-//                 case 'Haze':
-//                     image.src = 'images/mist.png';
-//                     break;
-
-//                 default:
-//                     image.src = '';
-//             }
-
-//             temperature.innerHTML = `${parseInt(json.main.temp)}<span>°F</span>`;
-//             description.innerHTML = `${json.weather[0].description}`;
-//             humidity.innerHTML = `${json.main.humidity}%`;
-//             wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
-
-//             weatherBox.style.display = '';
-//             weatherDetails.style.display = '';
-//             weatherBox.classList.add('fadeIn');
-//             weatherDetails.classList.add('fadeIn');
-//             container.style.height = '590px';
-//         });
-
-// });
