@@ -16,5 +16,8 @@ Mainly used to help give myself a basic understanding of utilizing HTML, CSS, an
 Since this was a code along from a Youtube video, I have a few adjustments I want 
 to implement on my own:
 
-- A button that changes the temperature from Celsius to Fahrenheit and vice versa
-- Change the background to an image of the location fetched from Google Images
+- A button that changes the temperature from Celsius to Fahrenheit and vice versa (Completed)
+![image](https://github.com/PorkyJames/weather-app-practice/assets/120065147/266d7dbb-3540-4a97-9d41-5a78524a3b49)
+![image](https://github.com/PorkyJames/weather-app-practice/assets/120065147/51a66dcb-0379-44be-a0dc-cfdc9c4b423a)
+
+
