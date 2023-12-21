@@ -23,5 +23,5 @@ to implement on my own:
 ## What I've Learned
 I am still incredibly inexperienced and this project honestly took a lot out of me even though I'm nearly complete with my bootcamp.
 Learning is one thing, but implementing my own ideas is another. I had to refactor a ton of code and add additional functions to help separate my approach.
-I relied on ChatGPT to help guide me in a direction when I wasn't able to advance forward. I hope to become less reliant on it and bemore creative 
+I relied on ChatGPT to help guide me in a direction when I wasn't able to advance forward. I hope to become less reliant on it and be more creative 
 in my approach to problem solving. 
