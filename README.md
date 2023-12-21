@@ -20,4 +20,8 @@ to implement on my own:
 ![image](https://github.com/PorkyJames/weather-app-practice/assets/120065147/266d7dbb-3540-4a97-9d41-5a78524a3b49)
 ![image](https://github.com/PorkyJames/weather-app-practice/assets/120065147/51a66dcb-0379-44be-a0dc-cfdc9c4b423a)
 
-
+## What I've Learned
+I am still incredibly inexperienced and this project honestly took a lot out of me even though I'm nearly complete with my bootcamp.
+Learning is one thing, but implementing my own ideas is another. I had to refactor a ton of code and add additional functions to help separate my approach.
+I relied on ChatGPT to help guide me in a direction when I wasn't able to advance forward. I hope to become less reliant on it and bemore creative 
+in my approach to problem solving. 
